@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CITY CAB SERVICE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #FFD700;
+            --accent: #FFED85;
+            --light: #F8FAFC;
+            --dark: #1E293B;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, #2D3748 100%);
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .car-image {
+            transition: all 0.5s ease;
+            border-radius: 12px;
+        }
+        
+        .car-image:hover {
+            transform: scale(1.03);
+        }
+        
+        .yellow-border {
+            border: 2px solid var(--secondary);
+        }
+        
+        .nav-dark {
+            background: var(--primary);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .section-title.center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .pattern-dots {
+            background-image: radial-gradient(var(--secondary) 1px, transparent 1px);
+            background-size: 15px 15px;
+            background-color: #000000;
+        }
+        
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--primary);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+        }
+        
+        .card-dark {
+            background: var(--primary);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/923474450069" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp" style="margin-top:16px;"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="nav-dark text-white shadow-lg sticky top-0 z-50">
+	
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                   <div class="w-14 h-14 rounded-full flex items-center justify-center shadow-md overflow-hidden">
+                        <img src="8.png" alt="City Cab Service Logo" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-white">CITY CAB SERVICE</h1>
+                        <p class="text-xs text-yellow-300"></p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-white hover:text-yellow-300 transition font-medium">Home</a>
+                    <a href="#services" class="text-white hover:text-yellow-300 transition font-medium">Services</a>
+                    <a href="#fleet" class="text-white hover:text-yellow-300 transition font-medium">Our Fleet</a>
+                    <a href="#contact" class="text-white hover:text-yellow-300 transition font-medium">Contact</a>
+                </nav>
+                <div class="md:hidden">
+                    <button class="text-white">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+	
+	
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-16 md:py-24 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 pattern-dots"></div>
+    
+    <div class="container mx-auto px-4 relative">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                    CITY CAB <span class="gradient-text">SERVICE</span> RENT A CAR
+                </h1>
+
+                <!-- New line added -->
+                <p class="text-lg font-semibold text-yellow-400 mb-4">Since 1988</p>
+
+                <p class="text-xl mb-8 opacity-90">
+                    24/7 Professional Car Rental Services in Lahore - Your Journey, Our Priority
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/923474450069" class="btn-primary px-8 py-4 rounded-lg text-lg font-semibold text-center">
+                        <i class="fab fa-whatsapp mr-2"></i>Book on WhatsApp
+                    </a>
+                    <a href="tel:+923017968225" class="bg-white text-black px-8 py-4 rounded-lg text-lg font-semibold transition transform hover:scale-105 shadow-lg text-center">
+                        <i class="fas fa-phone mr-2"></i>Call Now
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-yellow-500/20 rounded-2xl blur-xl"></div>
+                    <img src="https://www.rushlane.com/wp-content/uploads/2025/08/tata-safari-harrier-adventure-x-launch-price-.jpeg" 
+                         alt="Luxury Car" class="relative rounded-2xl shadow-2xl car-image w-full max-w-md yellow-border">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 section-title center">Our Premium Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Professional car rental services with experienced drivers and well-maintained vehicles</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-2xl card-hover border border-yellow-200">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-clock text-2xl text-yellow-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">24/7 Service</h3>
+                        <p class="text-gray-600">Round the clock car rental service available 24 hours a day, 7 days a week for your convenience.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl card-hover border border-yellow-200">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-user-tie text-2xl text-yellow-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">Professional Drivers</h3>
+                        <p class="text-gray-600">Experienced and licensed drivers like M. Javed ensuring safe and comfortable journeys.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl card-hover border border-yellow-200">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-map-marked-alt text-2xl text-yellow-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">Local & Outstation</h3>
+                        <p class="text-gray-600">Both local Lahore trips and outstation journeys with competitive rates and reliable service.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Section -->
+    <section id="fleet" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 section-title center">Our Premium Fleet</h2>
+                <p class="text-gray-600">Well-maintained vehicles for all your transportation needs</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+				
+				<!-- Toyota Landcruiser V8 -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover yellow-border">
+  <div class="h-48 overflow-hidden">
+    <img src="http://www.carsuk.net/wp-content/gallery/2012-toyota-land-cruiser-v8/toyota-land-cruiser-v8-2012-1.jpg" 
+         alt="Toyota Landcruiser V8" class="w-full h-full object-cover">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold mb-2">Toyota Landcruiser V8</h3>
+    <p class="text-gray-600 mb-4">Comfortable sedan perfect for city rides and long journeys</p>
+    <div>
+      <p class="text-lg font-semibold text-gray-800">Local: <span class="text-yellow-600 font-bold">Rs. 30000/Per day</span></p>
+      <p class="text-lg font-semibold text-gray-800">Outstation: <span class="text-yellow-600 font-bold">Rs. 35000/Per day</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- Toyota Prado -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover yellow-border">
+  <div class="h-48 overflow-hidden">
+    <img src="https://wallpapercave.com/wp/wp8971343.jpg" 
+         alt="Toyota Prado" class="w-full h-full object-cover">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold mb-2">Toyota Prado</h3>
+    <p class="text-gray-600 mb-4">Comfortable sedan perfect for city rides and long journeys</p>
+    <div>
+      <p class="text-lg font-semibold text-gray-800">Local: <span class="text-yellow-600 font-bold">Rs. 20000/Per day</span></p>
+      <p class="text-lg font-semibold text-gray-800">Outstation: <span class="text-yellow-600 font-bold">Rs. 24000/Per day</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- Fortuner -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover yellow-border">
+  <div class="h-48 overflow-hidden">
+    <img src="https://i.dawn.com/primary/2020/01/5e2190c278a2b.png" 
+         alt="Fortuner" class="w-full h-full object-cover">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold mb-2">Fortuner</h3>
+    <p class="text-gray-600 mb-4">Comfortable sedan perfect for city rides and long journeys</p>
+    <div>
+      <p class="text-lg font-semibold text-gray-800">Local: <span class="text-yellow-600 font-bold">Rs. 12,000/day</span></p>
+      <p class="text-lg font-semibold text-gray-800">Outstation: <span class="text-yellow-600 font-bold">Rs.15,000/day</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- New Honda Civic -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover yellow-border">
+  <div class="h-48 overflow-hidden">
+    <img src="https://cache4.pakwheels.com/system/car_generation_pictures/7370/original/Cover.jpg?1677570254" 
+         alt="New Honda Civic" class="w-full h-full object-cover">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold mb-2">New Honda Civic</h3>
+    <p class="text-gray-600 mb-4">Comfortable sedan perfect for city rides and long journeys</p>
+    <div>
+      <p class="text-lg font-semibold text-gray-800">Local: <span class="text-yellow-600 font-bold">Rs. 10,000/day</span></p>
+      <p class="text-lg font-semibold text-gray-800">Outstation: <span class="text-yellow-600 font-bold">Rs.14,000/day</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- Honda Civic X -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover yellow-border">
+  <div class="h-48 overflow-hidden">
+    <img src="https://static.pakwheels.com/2016/02/2016-Honda-Civic-Turbo-2.jpg" 
+         alt="Honda Civic X" class="w-full h-full object-cover">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold mb-2">Honda Civic X</h3>
+    <p class="text-gray-600 mb-4">Comfortable sedan perfect for city rides and long journeys</p>
+    <div>
+      <p class="text-lg font-semibold text-gray-800">Local: <span class="text-yellow-600 font-bold">Rs. 8000/Per day</span></p>
+      <p class="text-lg font-semibold text-gray-800">Outstation: <span class="text-yellow-600 font-bold">Rs. 10000/Per day</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- Grande -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover yellow-border">
+  <div class="h-48 overflow-hidden">
+    <img src="https://i0.wp.com/www.toyotaravi.com/wp-content/uploads/2015/12/exterior-main-1.jpg?fit=1265%2C600&ssl=1" 
+         alt="Grande" class="w-full h-full object-cover">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold mb-2">Grande</h3>
+    <p class="text-gray-600 mb-4">Comfortable sedan perfect for city rides and long journeys</p>
+    <div>
+      <p class="text-lg font-semibold text-gray-800">Local: <span class="text-yellow-600 font-bold">Rs. 7000/day</span></p>
+      <p class="text-lg font-semibold text-gray-800">Outstation: <span class="text-yellow-600 font-bold">Rs. 10,000/day</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- Toyota Corolla Altis 1.6 -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover yellow-border">
+  <div class="h-48 overflow-hidden">
+    <img src="https://toyota-central.com/Assets/images/Altis.png" 
+         alt="Toyota Corolla Altis 1.6" class="w-full h-full object-cover">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold mb-2">Toyota Corolla Altis 1.6</h3>
+    <p class="text-gray-600 mb-4">Comfortable sedan perfect for city rides and long journeys</p>
+    <div>
+      <p class="text-lg font-semibold text-gray-800">Local: <span class="text-yellow-600 font-bold">Rs. 6000/day</span></p>
+      <p class="text-lg font-semibold text-gray-800">Outstation: <span class="text-yellow-600 font-bold">Rs.9000/day</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- Corolla GLi -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover yellow-border">
+  <div class="h-48 overflow-hidden">
+    <img src="https://toyotacreek.com/wp-content/uploads/2025/03/GLi-Altis-A-Complete-Comparison-Featured-Image.jpg" 
+         alt="Corolla GLi" class="w-full h-full object-cover">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold mb-2">Corolla GLi</h3>
+    <p class="text-gray-600 mb-4">Comfortable sedan perfect for city rides and long journeys</p>
+    <div>
+      <p class="text-lg font-semibold text-gray-800">Local: <span class="text-yellow-600 font-bold">Rs. 5000/day</span></p>
+      <p class="text-lg font-semibold text-gray-800">Outstation: <span class="text-yellow-600 font-bold">Rs.7000/day</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- Toyota Yaris -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover yellow-border">
+  <div class="h-48 overflow-hidden">
+    <img src="https://bloompakistan.com/wp-content/uploads/2025/05/UBL-Launches-Easy-Monthly-Installment-Plan-for-All-Toyota-Yaris-Models.jpg" 
+         alt="Toyota Yaris" class="w-full h-full object-cover">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold mb-2">Toyota Yaris</h3>
+    <p class="text-gray-600 mb-4">Comfortable sedan perfect for city rides and long journeys</p>
+    <div>
+      <p class="text-lg font-semibold text-gray-800">Local: <span class="text-yellow-600 font-bold">Rs. 5000/Per day</span></p>
+      <p class="text-lg font-semibold text-gray-800">Outstation: <span class="text-yellow-600 font-bold">Rs. 7000/Per day</span></p>
+    </div>
+  </div>
+</div>
+
+
+
+
+          
+
+				
+				
+
+               
+
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <!-- Transparent Pricing Section (aap ka diya hua code) -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4 section-title center">Transparent Pricing</h2>
+            <p class="text-gray-600">No hidden charges - What you see is what you pay</p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-gray-50 rounded-2xl p-8 border border-yellow-200">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 text-gray-800">Sample Pricing Breakdown</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between py-3 border-b border-gray-200">
+                                <span class="font-medium">Daily Rent (9 hrs)</span>
+                                <span class="font-semibold text-yellow-600">Rs. .....</span>
+                            </div>
+                            <div class="flex justify-between py-3 border-b border-gray-200">
+                                <span class="font-medium">Driver Charges</span>
+                                <span class="font-semibold text-yellow-600">Rs. 1,000</span>
+                            </div>
+                            <div class="flex justify-between py-3 border-b border-gray-200">
+                                <span class="font-medium">Petrol (Customer pays)</span>
+                                <span class="font-semibold text-yellow-600">As per usage</span>
+                            </div>
+                            <div class="flex justify-between py-3 border-b border-gray-200">
+                                <span class="font-medium">Outstation Charges</span>
+                                <span class="font-semibold text-yellow-600">Rs. 30/km</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md yellow-border">
+                        <h4 class="text-xl font-semibold mb-4 text-center text-yellow-600">Get Custom Quote</h4>
+                        <p class="text-gray-600 text-center mb-6">Contact us for personalized pricing based on your requirements</p>
+                        <div class="text-center">
+                            <a href="https://wa.me/923474450069" class="btn-primary px-6 py-3 rounded-lg inline-flex items-center">
+                                <i class="fab fa-whatsapp mr-2"></i>
+                                Get Quote on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ✅ Customer Reviews Section -->
+<section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">Customer Reviews</h2>
+            <p class="text-gray-600">See what our happy clients say about us</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Review 1 -->
+            <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100">
+                <p class="text-gray-700 mb-4">"Excellent service! The car was clean, driver was professional and the whole booking process was smooth."</p>
+                <h4 class="font-semibold text-yellow-600">Ali Khan</h4>
+                <span class="text-sm text-gray-500">Lahore</span>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100">
+                <p class="text-gray-700 mb-4">"Very transparent pricing, no hidden charges. I’ll definitely book again for my next trip."</p>
+                <h4 class="font-semibold text-yellow-600">Sara Ahmed</h4>
+                <span class="text-sm text-gray-500">Islamabad</span>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100">
+                <p class="text-gray-700 mb-4">"Best rent-a-car service in Lahore. Customer support was available 24/7 and very helpful."</p>
+                <h4 class="font-semibold text-yellow-600">Usman Raza</h4>
+                <span class="text-sm text-gray-500">Karachi</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+<section id="contact" class="py-16 bg-black text-white">
+    <div class="container mx-auto px-4">
+
+        <!-- ✅ CEO Name Added on Top -->
+        <div class="text-center mb-6">
+            <p class="text-xl font-semibold text-yellow-500">
+                <i class="fas fa-user-tie mr-2"></i> CEO: Mian Muhammad Riaz
+            </p>
+        </div>
+
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4 section-title center">Contact Us</h2>
+            <p class="text-gray-300">Get in touch for bookings and inquiries</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-2xl font-semibold mb-6">Get In Touch</h3>
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-phone text-white"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Phone</p>
+                            <p class="text-gray-300">+92 301-7968225</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
+                            <i class="fab fa-whatsapp text-white"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold">WhatsApp</p>
+                            <p class="text-gray-300">+92 347-4450069</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-map-marker-alt text-white"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Address</p>
+                            <p class="text-gray-300">20-G, DHA Phase 1, Commercial Area, Lahore</p> 
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-clock text-white"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Working Hours</p>
+                            <p class="text-gray-300">24/7 - Always Available</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-2xl font-semibold mb-6">Location Map</h3>
+                <div class="bg-gray-800 rounded-2xl p-4 h-80 flex items-center justify-center yellow-border">
+                    <div class="text-center">
+                        <i class="fas fa-map-marked-alt text-4xl text-yellow-500 mb-4"></i>
+                        <p class="text-gray-300 mb-4">City Cab Service Rent A Car</p>
+                        <a href="https://www.google.com/maps?q=31.48363888888889,74.39347222222223" target="_blank" class="btn-primary px-6 py-3 rounded-lg inline-block">
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                            View on Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+  
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('bg-opacity-95', 'backdrop-blur-sm');
+            } else {
+                header.classList.remove('bg-opacity-95', 'backdrop-blur-sm');
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
